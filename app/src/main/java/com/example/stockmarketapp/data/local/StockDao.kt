@@ -14,9 +14,7 @@ interface StockDao {
     )
 
     @Query("DELETE FROM companylistingentity")
-    suspend fun clearCompanyListings(
-        companyListingEntities: List<CompanyListingEntity>
-    )
+    suspend fun clearCompanyListings()
 
     @Query(
         """
@@ -27,6 +25,6 @@ interface StockDao {
         """
     )
     suspend fun searchCompanyListings(
-        query: Query
-    )
+        query: String
+    ): List<CompanyListingEntity>
 }
