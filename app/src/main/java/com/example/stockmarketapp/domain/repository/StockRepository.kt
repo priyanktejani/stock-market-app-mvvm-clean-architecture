@@ -7,8 +7,8 @@ import kotlinx.coroutines.flow.Flow
 interface StockRepository {
 
     suspend fun getCompanyListing(
-        fetchFromRemote: Boolean,
-        query: String
+        query: String,
+        fetchFromRemote: Boolean
     ): Flow<Resource<List<CompanyListing>>>
 
 }
