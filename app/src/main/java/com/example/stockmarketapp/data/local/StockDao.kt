@@ -9,7 +9,7 @@ import androidx.room.Query
 interface StockDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun companyListings(
+    suspend fun insertCompanyListings(
         companyListingEntities: List<CompanyListingEntity>
     )
 
