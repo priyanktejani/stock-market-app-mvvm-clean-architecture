@@ -25,8 +25,8 @@ class StockRepositoryImpl @Inject constructor(
     private val dao = db.dao
 
     override suspend fun getCompanyListing(
-        fetchFromRemote: Boolean,
-        query: String
+        query: String,
+        fetchFromRemote: Boolean
     ): Flow<Resource<List<CompanyListing>>> {
         return flow {
             emit(Resource.Loading(isLoading = true))
