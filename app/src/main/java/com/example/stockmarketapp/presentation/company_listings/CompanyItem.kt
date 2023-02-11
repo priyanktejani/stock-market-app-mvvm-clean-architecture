@@ -23,29 +23,33 @@ fun CompanyItem(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Column(
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.weight(1f)
         ) {
+            Row(
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(
+                    text = company.name,
+                    fontWeight = FontWeight.SemiBold,
+                    fontSize = 16.sp,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    overflow = TextOverflow.Ellipsis,
+                    maxLines = 1,
+                    modifier = Modifier.weight(1f)
+                )
+                Spacer(modifier = Modifier.width(4.dp))
+                Text(
+                    text = company.exchange,
+                    fontWeight = FontWeight.Light,
+                    color = MaterialTheme.colorScheme.onBackground
+                )
+            }
+            Spacer(modifier = Modifier.height(8.dp))
             Text(
-                text = company.name,
-                fontWeight = FontWeight.SemiBold,
-                fontSize = 16.sp,
-                color = MaterialTheme.colorScheme.onBackground,
-                overflow = TextOverflow.Ellipsis,
-                maxLines = 1,
-                modifier = Modifier.weight(1f)
-            )
-            Spacer(modifier = Modifier.width(4.dp))
-            Text(
-                text = company.exchange,
-                fontWeight = FontWeight.Light,
+                text = "(${company.symbol})",
+                fontStyle = FontStyle.Italic,
                 color = MaterialTheme.colorScheme.onBackground
             )
         }
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(
-            text = "(${company.symbol})",
-            fontStyle = FontStyle.Italic,
-            color = MaterialTheme.colorScheme.onBackground
-        )
     }
 }
