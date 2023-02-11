@@ -10,7 +10,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class CompanyListingParser @Inject constructor(): CSVParser<CompanyListing> {
+class CompanyListingParser @Inject constructor() : CSVParser<CompanyListing> {
 
     override suspend fun parse(stream: InputStream): List<CompanyListing> {
         val csvReader = CSVReader(InputStreamReader(stream))
@@ -25,8 +25,8 @@ class CompanyListingParser @Inject constructor(): CSVParser<CompanyListing> {
 
                     CompanyListing(
                         name = name ?: return@mapNotNull null,
-                        symbol = symbol?: return@mapNotNull null,
-                        exchange = exchange?: return@mapNotNull null
+                        symbol = symbol ?: return@mapNotNull null,
+                        exchange = exchange ?: return@mapNotNull null
                     )
                 }
                 .also {
