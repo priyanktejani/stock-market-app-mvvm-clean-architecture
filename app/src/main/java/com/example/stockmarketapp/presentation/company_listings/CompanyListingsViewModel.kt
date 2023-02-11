@@ -18,8 +18,7 @@ class CompanyListingsViewModel @Inject constructor(
     private val repository: StockRepository
 ): ViewModel() {
 
-    private var state by mutableStateOf(CompanyListingsState())
-
+    var state by mutableStateOf(CompanyListingsState())
     private var searchJob: Job? = null
 
     fun onEvent(event: CompanyListingsEvent) {
@@ -48,7 +47,7 @@ class CompanyListingsViewModel @Inject constructor(
                 .collect { result ->
                      when(result) {
                          is Resource.Loading -> {
-                             state = state.copy(isLoading = result.isLoading)
+                             state = state.copy(loading = result.loading)
                          }
                          is Resource.Error -> {
                              result.message?.let {

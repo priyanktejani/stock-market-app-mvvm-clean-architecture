@@ -29,7 +29,7 @@ class StockRepositoryImpl @Inject constructor(
         fetchFromRemote: Boolean
     ): Flow<Resource<List<CompanyListing>>> {
         return flow {
-            emit(Resource.Loading(isLoading = true))
+            emit(Resource.Loading(loading = true))
 
             val localListing = dao.searchCompanyListings(query)
             emit(Resource.Success(data = localListing.map { it.toCompanyListing() }))
@@ -37,7 +37,7 @@ class StockRepositoryImpl @Inject constructor(
             val isDbEmpty = localListing.isEmpty() && query.isBlank()
             val loadFromCache = !isDbEmpty && !fetchFromRemote
             if (loadFromCache) {
-                emit(Resource.Loading(isLoading = false))
+                emit(Resource.Loading(loading = false))
                 return@flow
             }
 
@@ -63,7 +63,7 @@ class StockRepositoryImpl @Inject constructor(
                     data = dao.searchCompanyListings("")
                         .map { it.toCompanyListing() }
                 ))
-                emit(Resource.Loading(isLoading = false))
+                emit(Resource.Loading(loading = false))
             }
         }
     }
