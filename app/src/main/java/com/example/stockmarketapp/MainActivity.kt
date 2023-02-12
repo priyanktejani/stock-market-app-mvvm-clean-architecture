@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.stockmarketapp.presentation.company_info.CompanyInfoScreen
 import com.example.stockmarketapp.presentation.company_listings.CompanyListingScreen
 import com.example.stockmarketapp.ui.theme.StockMarketAppTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,6 +37,11 @@ class MainActivity : ComponentActivity() {
                             route = Screen.CompanyListingScreen.route
                         ) {
                             CompanyListingScreen(navController)
+                        }
+                        composable(
+                            route = Screen.CompanyInfoScreen.route + "/{symbol}"
+                        ) {
+                            CompanyInfoScreen()
                         }
                     }
                 }

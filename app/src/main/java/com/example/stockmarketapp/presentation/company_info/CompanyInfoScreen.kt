@@ -17,7 +17,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 
 @Composable
 fun CompanyInfoScreen(
-    symbol: String,
     viewModel: CompanyInfoViewModel = hiltViewModel()
 ) {
     val state = viewModel.state

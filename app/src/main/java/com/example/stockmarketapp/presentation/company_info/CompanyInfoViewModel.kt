@@ -23,7 +23,7 @@ class CompanyInfoViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            val symbol = savedStateHandle.get<String>("Symbol") ?: return@launch
+            val symbol = savedStateHandle.get<String>("symbol") ?: return@launch
 
             state = state.copy(loading = true)
             val companyInfo = async { repository.getCompanyInfo(symbol) }
