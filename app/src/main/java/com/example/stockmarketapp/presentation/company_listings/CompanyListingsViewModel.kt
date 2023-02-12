@@ -54,8 +54,8 @@ class CompanyListingsViewModel @Inject constructor(
                              state = state.copy(loading = result.loading)
                          }
                          is Resource.Error -> {
-                             result.message?.let {
-                                 state = state.copy(error = "An unexpected error occurred")
+                             result.message?.let { error ->
+                                 state = state.copy(error = error)
                              }
                          }
                          is Resource.Success -> {
