@@ -7,6 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -75,13 +76,13 @@ fun CompanyInfoScreen(
                     Spacer(modifier = Modifier.height(16.dp))
                     Text(text = "Market Summary")
                     Spacer(modifier = Modifier.height(32.dp))
-//                    StockChart(
-//                        infos = state.stockInfos,
-//                        modifier = Modifier
-//                            .fillMaxWidth()
-//                            .height(250.dp)
-//                            .align(CenterHorizontally)
-//                    )
+                    StockChart(
+                        infos = state.stockInfos,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(250.dp)
+                            .align(CenterHorizontally)
+                    )
                 }
             }
         }
