@@ -33,11 +33,17 @@ class CompanyInfoViewModel @Inject constructor(
                 is Resource.Loading -> Unit
                 is Resource.Error -> {
                     companyInfoResult.message?.let { error ->
-                        state = state.copy(error = error)
+                        state = state.copy(
+                            error = error,
+                            loading = false
+                        )
                     }
                 }
                 is Resource.Success -> {
-                    state = state.copy(company = companyInfoResult.data)
+                    state = state.copy(
+                        company = companyInfoResult.data,
+                        loading = false
+                    )
                 }
             }
 
@@ -45,12 +51,18 @@ class CompanyInfoViewModel @Inject constructor(
                 is Resource.Loading -> Unit
                 is Resource.Error -> {
                     intradayInfoResult.message?.let { error ->
-                        state = state.copy(error = error)
+                        state = state.copy(
+                            error = error,
+                            loading = false
+                        )
                     }
                 }
                 is Resource.Success -> {
                     intradayInfoResult.data?.let { listing ->
-                        state = state.copy(stockInfos = listing)
+                        state = state.copy(
+                            stockInfos = listing,
+                            loading = false
+                        )
                     }
                 }
             }
