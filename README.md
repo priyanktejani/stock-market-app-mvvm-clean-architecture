@@ -20,7 +20,7 @@ https://github.com/priyanktejani/stock-market-app-mvvm-clean-architecture.git
 ```
 
 <p align="center">
-	<img width=33%; src="https://github.com/priyanktejani/stock-market-app-mvvm-clean-architecture/blob/master/screenshots/screen-1.png">
-	<img width=33%; src="https://github.com/priyanktejani/stock-market-app-mvvm-clean-architecture/blob/master/screenshots/screen-2.png">
-    <img width=33%; src="https://github.com/priyanktejani/stock-market-app-mvvm-clean-architecture/blob/master/screenshots/screen-3.png">
+	<img width=32%; src="https://github.com/priyanktejani/stock-market-app-mvvm-clean-architecture/blob/master/screenshots/screen-1.png">
+	<img width=32%; src="https://github.com/priyanktejani/stock-market-app-mvvm-clean-architecture/blob/master/screenshots/screen-2.png">
+    <img width=32%; src="https://github.com/priyanktejani/stock-market-app-mvvm-clean-architecture/blob/master/screenshots/screen-3.png">
 </p>
